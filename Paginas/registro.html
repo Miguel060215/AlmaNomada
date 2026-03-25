@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Explorador de Destinos</title>
+    <link rel="stylesheet" href="./../Estilos/registro.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-card">
+            <div class="header">
+                <h2>Únete a la Aventura</h2>
+                <p>Crea tu cuenta para guardar tus rutas favoritas</p>
+            </div>
+
+            <form action="./../ArchivosPHP/registrar.php" method="post">
+                <div class="input-group">
+                    <label for="username">Nombre de usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Ej. ViajeroPro" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="usuario@correo.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm_password">Confirmar contraseña</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Registrarse</button>
+            </form>
+             <div class="footer-link" style="text-align: center; margin-top: 20px;">
+                <p style="font-size: 14px; color: #546e7a;">
+                    Ya tienes cuenta? <a href="login.html" style="color: #1e88e5; text-decoration: none; font-weight: bold;">Inicia Sesion</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
