@@ -1,19 +1,17 @@
 <?php
 include 'conexion.php';
-session_start(); // Iniciamos sesión para recordar al usuario
+session_start(); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    // Buscamos al usuario por su correo
     $sql = "SELECT * FROM usuarios WHERE correo = '$email'";
     $resultado = mysqli_query($conexion, $sql);
 
     if (mysqli_num_rows($resultado) > 0) {
         $usuario = mysqli_fetch_assoc($resultado);
         
-        // Verificamos si la contraseña coincide con el hash guardado
         if (password_verify($pass, $usuario['password'])) {
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['nombre'] = $usuario['nombre_usuario'];
