@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             echo "<script>
                     alert('¡Bienvenido de nuevo, " . $usuario['nombre_usuario'] . "!');
-                    window.location.href='./../Paginas/index.html'; 
+                    window.location.href='./../Paginas/index.php'; 
                   </script>";
         } else {
             echo "<script>alert('Contraseña incorrecta.'); window.history.back();</script>";
