@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['nombre'])) {
+if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['nombre'])) {
     header("Location: login.html");
     exit();
 }
@@ -11,6 +11,7 @@ if (!isset($_SESSION['nombre'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conócenos - Alma Nómada</title>
+    <link rel="stylesheet" href="../Estilos/inicio.css">
     <link rel="stylesheet" href="../Estilos/conocenos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -18,19 +19,31 @@ if (!isset($_SESSION['nombre'])) {
 
     <header class="main-header">
         <div class="logo">
-            <a href="index.php" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+            <a href="index.php" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
                 <img src="../Imagenes/logo.png" alt="Logo">
                 <h1>Alma Nómada</h1>
             </a>
         </div>
+
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="index.php#destinos">Destinos</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Explorar <i class="fa fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="carrito.php"><i class="fa fa-shopping-cart"></i> Mi Carrito</a>
+                        <a href="conocenos.php"><i class="fa fa-info-circle"></i> Conócenos</a>
+                    </div>
+                </li>
             </ul>
         </nav>
+
         <div class="user-actions">
-            <a href="../ArchivosPHP/logout.php" class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <span>Hola, <strong><?php echo $_SESSION['nombre']; ?></strong></span>
+            <a href="../ArchivosPHP/logout.php" title="Cerrar Sesión" class="logout-icon">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
         </div>
     </header>
 
@@ -61,6 +74,22 @@ if (!isset($_SESSION['nombre'])) {
             </div>
         </div>
 
+        <section class="video-experiencia">
+            <h2>Vive la Experiencia</h2>
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/AezvDGFXAjw?si=LqBCxkO0YkD0UssL&amp;start=4" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
         <section class="valores">
             <div class="valor-card">
                 <i class="fa fa-heart"></i>
@@ -81,7 +110,7 @@ if (!isset($_SESSION['nombre'])) {
     </main>
 
     <footer class="mini-footer">
-        <p>Alma Nómada &copy; 2026 | Desarrollado con pasión en Chihuahua.</p>
+        <p>Alma Nómada &copy; 2026 | Desarrollado con pasión en Ciudad Juárez, Chihuahua.</p>
     </footer>
 
 </body>
