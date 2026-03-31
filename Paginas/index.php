@@ -51,6 +51,44 @@ if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['nombre'])) {
         </div>
     </section>
 
+    <section class="seccion-mapa">
+        <div class="titulo-seccion">
+            <h2>Explora el Estado Grande</h2>
+            <p>Haz clic en los puntos clave para conocer cada región</p>
+        </div>
+
+        <div class="contenedor-mapa">
+            <div class="mapa-interactivo">
+                <img src="../Imagenes/mapa-chihuahua.svg" alt="Mapa de Regiones de Chihuahua" class="img-mapa">
+                
+                <a href="chihuahua.html#juarez" class="marcador m-juarez" title="Ciudad Juárez">
+                    <span class="punto"></span>
+                    <span class="nombre-ciudad">Cd. Juárez</span>
+                </a>
+
+                <a href="chihuahua.html#paquime" class="marcador m-paquime" title="Casas Grandes">
+                    <span class="punto"></span>
+                    <span class="nombre-ciudad">Paquimé</span>
+                </a>
+
+                <a href="chihuahua.html#capital" class="marcador m-capital" title="Chihuahua Capital">
+                    <span class="punto"></span>
+                    <span class="nombre-ciudad">Chihuahua</span>
+                </a>
+
+                <a href="chihuahua.html#creel" class="marcador m-creel" title="Creel / Sierra">
+                    <span class="punto"></span>
+                    <span class="nombre-ciudad">Creel</span>
+                </a>
+
+                <a href="chihuahua.html#parral" class="marcador m-parral" title="Parral">
+                    <span class="punto"></span>
+                    <span class="nombre-ciudad">Parral</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="destinos" class="destinos-container">
         <div class="titulo-seccion">
             <h2>Destinos Imperdibles</h2>
@@ -101,7 +139,7 @@ if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['nombre'])) {
                 </div>
                 <div class="card-info">
                     <h3>Parque Nacional Cumbres de Majalca</h3>
-                    <p>Parque nacional protegido y conocido por sus formaciones rocosas, sus bosques y su biodiversidad. </p>
+                    <p>Parque nacional protegido y conocido por sus formaciones rocosas, sus bosques y su biodiversidad.</p>
                     <a href="javascript:void(0)" class="btn-ver-mas" onclick="abrirDetalles(4)">Ver Detalles</a>
                 </div>
             </div>
@@ -120,11 +158,11 @@ if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['nombre'])) {
 
             <div class="card-destino">
                 <div class="card-image">
-                    <img src="https://inahchihuahua.wordpress.com/wp-content/uploads/2014/04/40-casas-2.jpg" alt="Zona arqueológica de Paquimé">
+                    <img src="https://inahchihuahua.wordpress.com/wp-content/uploads/2014/04/40-casas-2.jpg" alt="Paquimé">
                     <span class="etiqueta">Cultura</span>
                 </div>
                 <div class="card-info">
-                    <h3>Zona arqueológica de Paquimé</h3>
+                    <h3>Paquimé</h3>
                     <p>Impresionante sitio precolombino del norte de Mexico. Centro de una civilizacion entre los siglos XII y XV.</p>
                     <a href="javascript:void(0)" class="btn-ver-mas" onclick="abrirDetalles(6)">Ver Detalles</a>
                 </div>
@@ -201,7 +239,7 @@ if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['nombre'])) {
         3: { titulo: "Creel", desc: "Descubre el corazón de la Sierra. Visita el Lago de Arareko y las misiones jesuitas en este Pueblo Mágico.", img: "https://media-cdn.tripadvisor.com/media/photo-s/1c/79/ec/79/creel-chihuahua-mexico.jpg" },
         4: { titulo: "Cumbres de Majalca", desc: "Formaciones rocosas únicas y un clima boscoso ideal para el senderismo y la desconexión total.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBU16hz3yCrgFwdxwzH5tFgNHlwadLAbih3w&s" },
         5: { titulo: "Tren Chepe", desc: "Súbete a la leyenda. Un recorrido por puentes y túneles que te mostrarán la mejor cara de la Sierra Madre.", img: "https://oem.com.mx/elheraldodechihuahua/img/22882654/1745152827/BASE_LANDSCAPE/1200/image.webp" },
-        6: { titulo: "Zona Arqueológica de Paquimé", desc: "Viaja al pasado en este sitio Patrimonio de la Humanidad. Conoce su avanzada arquitectura de tierra.", img: "https://inahchihuahua.wordpress.com/wp-content/uploads/2014/04/40-casas-2.jpg" }
+        6: { titulo: "Paquimé", desc: "Viaja al pasado en este sitio Patrimonio de la Humanidad. Conoce su avanzada arquitectura de tierra.", img: "https://inahchihuahua.wordpress.com/wp-content/uploads/2014/04/40-casas-2.jpg" }
     };
 
     function abrirDetalles(id) {
